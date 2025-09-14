@@ -22,15 +22,14 @@ After learning the headers and what they represent, I initially thought I could 
 ```python
 by_id = df.drop(['state', 'county'], axis=1).groupby('voting_station_id')
 ```
-When you use pd.DataFrame.groupby(), it returns a list with the name of the group (the value the column you were grouping had, so in this case it'd be the ID for the voting station), so you can just iterate through the list, so I set that up so I could perform some additional tasks afterwards.
-
-From there I coded a few things to analyze:
+When you use pd.DataFrame.groupby(), it returns a list with the name of the group (the value the column you were grouping had, so in this case it'd be the ID for the voting station) and the data associated with the group in a tuple, so you can just iterate through the list and analyze all the data. So, I decided what to analyze and run while iterating through each of these groups.
+I ultimately decided on the following:
 1) I first implemented a block of code to grab all of the unique vote combos from each voting station and then look for ones that had a higher percentage of votes.
     - The thought process was that if they were just duplicating votes, they'd show up in this process.
 2) After that first section did not work, I then looked at the ratio of votes for Canidate A and Canidate B. I noted this down as balance but this is just a ratio: given that it was a close election, we should see similar values in counties, and ideally most of them will be close to 1.
 3) I then decided to also look at the amount of votes that came in either through absentee (ie. mail in) or in person voting. Just to see the trends.
 
-For all three of these code blocks, I made sure to get the count for each object, and then sort them. It probably wasn't necessary for number 2 and 3, but I was rushing a bit - and it won't hurt here. We can just reorganize the data later.
+For all three of these code blocks, I made sure to get the count for each object, and then sort them. It probably wasn't necessary for number 2 and 3, but I was rushing a bit - and it won't hurt here. I can just reorganize the data later.
 Here's the relevant code for this section:
 ```python
 percentages = []
@@ -98,7 +97,7 @@ for county in counties:
     voters_df.sort_values(by="Absentee Percent", ascending=False).to_csv(county[0] + "_voter_turnout.csv")
 ```
 
-After all of this, I got 12 CSV files to analyze again. When I get new cleaned up data like this, I like to give things a look over to see if there's anything that looks off before I write more python. Thankfully, there were pretty clear signs that some voter booths were very different from the others that were in the same group. This is a screenshot of the Surburban County voter percentages, which shows what we should expect to see: 
+After all of this, I got 12 CSV files to analyze again. When I get new cleaned up data like this, I like to give things a look over again to see if there's anything that looks off before I write more python. Thankfully, there were pretty clear signs that some voter booths were very different from the others that were in the same group when looking at the presidential votes. This is a screenshot of the Surburban County voter percentages, which shows what we should expect to see: 
 
 ![Screenshot of the Surburban County voter data. All of the ratios are within a few percent of each other.](imgs/image-1.png)
 
@@ -106,6 +105,6 @@ All of these ratios are within a few percent/decimals of each other. Nothing too
 
 ![Screenshot of the Urban County voter percentages. One of the voting stations has a ratio that is .1 higher than the rest.](imgs/image-2.png)
 
+If that last voting station looks off to you, you'd be correct. This is one of the 6 stations that they mentioned had issues. Most of the other ones were about the same level of glaringly obvious, and all had a 0.1 or greater discrepency in the ratios. After getting all of the ids, I was able to submit the correct flag of MetaCTF{1251749b,4b45c819,1fe457e4,a4defb9c,329071ee,81b7bc0c} (note: these could be written in any order).
 
-That last id station looks a bit off: and you'd be right. This is one of the 6 stations that they mentioned had issues. Most of the other ones were about the same level of glaring, and all had 0.1 or greater of a discrepency in the ratios. After getting all of the ids, I was able to submit the correct flag of MetaCTF{1251749b,4b45c819,1fe457e4,a4defb9c,329071ee,81b7bc0c} (note: these could be written in any order).
 
