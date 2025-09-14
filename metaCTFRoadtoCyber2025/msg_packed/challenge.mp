@@ -1,0 +1,1 @@
+„¢idÍé¤info®Some data here§payload•‚£key¥alpha¥value°MetaCTF{MsgPack_‚£key¤beta¥value¢is‚£key§epsilon¥value§_funky_‚£keyÀ¥value£but‚£key¥gamma¥value¥cool}¦status¢OK
