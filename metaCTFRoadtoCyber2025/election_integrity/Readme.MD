@@ -99,10 +99,13 @@ for county in counties:
 ```
 
 After all of this, I got 12 CSV files to analyze again. When I get new cleaned up data like this, I like to give things a look over to see if there's anything that looks off before I write more python. Thankfully, there were pretty clear signs that some voter booths were very different from the others that were in the same group. This is a screenshot of the Surburban County voter percentages, which shows what we should expect to see: 
+
 ![Screenshot of the Surburban County voter data. All of the ratios are within a few percent of each other.](imgs/image-1.png)
 
 All of these ratios are within a few percent/decimals of each other. Nothing too aggregious. Now, look at the Urban County voter percentages:
+
 ![Screenshot of the Urban County voter percentages. One of the voting stations has a ratio that is .1 higher than the rest.](imgs/image-2.png)
 
 
 That last id station looks a bit off: and you'd be right. This is one of the 6 stations that they mentioned had issues. Most of the other ones were about the same level of glaring, and all had 0.1 or greater of a discrepency in the ratios. After getting all of the ids, I was able to submit the correct flag of MetaCTF{1251749b,4b45c819,1fe457e4,a4defb9c,329071ee,81b7bc0c} (note: these could be written in any order).
+
