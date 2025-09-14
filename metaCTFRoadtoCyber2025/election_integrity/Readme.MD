@@ -68,7 +68,7 @@ voters_df.sort_values(by="Absentee Percent", ascending=False).to_csv("voter_turn
 
 From this, I got a few good leads. The ratio of votes *did* seem skewed for a few station IDs, and they were really low compared to where I was expecting:
 
-![Photo of outputs: Shows results from the percentage_of_votes.csv, which have a lot of results that have very low ratios between canidate A and canidate B.](img/image.png)
+![Photo of outputs: Shows results from the percentage_of_votes.csv, which have a lot of results that have very low ratios between canidate A and canidate B.](imgs/image.png)
 
 Unfortunately for me... These were not the right answer. In hindsight, this never would have worked. Just looking at stations that had the lowest ratio (ie: furthest away from a 50/50 split) was never going to be a good solution, as they could influence a station to have ratio closer to 50/50. (Spoiler alert: They did that.)
 
@@ -102,6 +102,7 @@ After all of this, I got 12 CSV files to analyze again. When I get new cleaned u
 ![Screenshot of the Surburban County voter data. All of the ratios are within a few percent of each other.](imgs/image-1.png)
 
 All of these ratios are within a few percent/decimals of each other. Nothing too aggregious. Now, look at the Urban County voter percentages:
-![Screenshot of the Urban County voter percentages. One of the voting stations has a ratio that is .1 higher than the rest.](img/image-2.png)
+![Screenshot of the Urban County voter percentages. One of the voting stations has a ratio that is .1 higher than the rest.](imgs/image-2.png)
+
 
 That last id station looks a bit off: and you'd be right. This is one of the 6 stations that they mentioned had issues. Most of the other ones were about the same level of glaring, and all had 0.1 or greater of a discrepency in the ratios. After getting all of the ids, I was able to submit the correct flag of MetaCTF{1251749b,4b45c819,1fe457e4,a4defb9c,329071ee,81b7bc0c} (note: these could be written in any order).
