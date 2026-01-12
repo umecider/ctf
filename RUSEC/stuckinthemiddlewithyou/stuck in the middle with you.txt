@@ -1,0 +1,13 @@
+Links visited:
+https://www.dan.me.uk/tornodes (not on here)
+https://github.com/alireza-rezaee/tor-nodes (found on here, but I knew there were more than one so I had to keep digging)
+>googled tor family members
+>googled how to find MyFamily tor
+>reddit post: https://www.reddit.com/r/TOR/comments/9pj56o/family_of_nodes/
+>clicked on link, realized there's a relay search on their website
+>search for string as it's probably the identifier
+> find it, see the alleged family
+> open both of those, confirm there are no more links to other family nodes
+> assemble flag:
+
+RUSEC{212.47.233.86:51.15.40.38:151.115.73.55}
