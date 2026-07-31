@@ -6,15 +6,16 @@
 ## TLDR - Give me the solve:
 
 Simply type "key" and press the enter key.
-I'm not joking. Additional discussion can be found [here](#solution)
+
+Additional discussion on why this works can be found [here](#solution), but it's likely unintended.
 
 ![alt text](image-2.png)
 
 ## Writeup/Initial Steps
 
-Initially, I thought this would be similar to another pyjail problem called abcdef, in which you had to use octal to add letters to the main list held in memory. I found out pretty fast that that's just not something that works, due to the checks. Let's actually go through that. Maybe I should've done that before throwing myself into a solution, but I didn't. One day I'll learn.
+Initially, I thought this would be similar to another pyjail problem called abcdef, in which you had to use octal to add letters to the main list held in memory. I found out pretty fast that that's just not something that works, due to the checks. After, I decided to actually go through the code, as I should've done initially.
 
-I'll be skipping going over a decent chunk of the code as it's sort of irrelevant.
+I'll be skipping going over a decent chunk of the code as it's irrelevant.
 ```python
 def check_black_list(inp):
     for item in black_list:
