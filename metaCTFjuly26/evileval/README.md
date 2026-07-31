@@ -92,10 +92,10 @@ And here's the solve in the chall env:
 
 ![alt text](image-2.png)
 
-Which means they forgot to add "key" to the black list. It was probably unintentional, but hey - a slightly sad unintentional solve is still a solve.
+Which means they forgot to add "key" to the black list. It was probably unintentional, but hey - an unintentional solve is still a solve. Just a little sad I didn't get to do the full solve/come up with my own (I discuss further solve ideas below).
 
 ## Closing Notes
-So, ultimately a little dissapointing, but glad to get the solve. A few things to note:
+So, ultimately a little dissapointing after the build up/search, but glad to get the solve. A few things to note:
 
 1) This solve's logic is almost identical to the normal solve, which is that things in the main memory pool are accessable by `eval()`. 
     - To get around this unintentional solve, they should've created a function to generate the keyvalue, adding a number into the name so it can't be invoked. Something like: 
