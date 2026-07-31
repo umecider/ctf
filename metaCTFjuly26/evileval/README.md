@@ -81,10 +81,14 @@ And here's me running it, and having it eval `a`.
 
 ## Solution
 
-Given that I finally remembered that you can read stuff in memory, I tried a few more things to mess around with pulling stuff from memory (like ct). I utimately just went "meh, why not?" and tried inputting `key`, which is the name of the variable that our eval is being compared to. This gives you the solve, as it pulls the key variable from memory. Here's me testing it in my local env (note that it's getting saved to the same main memory any code would run in if I wasn't using the local python env):
+Given that I finally remembered that you can read stuff in memory, I tried a few more things to mess around with pulling stuff from memory (like ct). I utimately just went "meh, why not?" and tried inputting `key`, which is the name of the variable that our eval is being compared to. This gives you the solve, as it pulls the key variable from memory. 
+
+Here's me testing it in my local env (note that it's getting saved to the same main memory any code would run in if I wasn't using the local python env):
+
 ![alt text](image-1.png)
 
 And here's the solve in the chall env:
+
 ![alt text](image-2.png)
 
 Which means they forgot to add "key" to the black list. It was probably unintentional, but hey - a slightly sad unintentional solve is still a solve.
