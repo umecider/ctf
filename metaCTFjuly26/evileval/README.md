@@ -6,7 +6,7 @@
 ## TLDR - Give me the solve:
 
 Simply type "key" and press the enter key.
-I'm not joking.
+I'm not joking. Additional discussion can be found [here](#solution)
 
 ![alt text](image-2.png)
 
